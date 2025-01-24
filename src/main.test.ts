@@ -270,7 +270,7 @@ test('it supports returning information about grouped updates', async () => {
         dependencyName: 'github.com/docker/cli',
         dependencyType: 'direct:production',
         updateType: 'version-update:semver-patch',
-        directory: '/',
+        directory: '/gh-base-image',
         packageEcosystem: 'docker',
         targetBranch: 'trunk',
         prevVersion: '',
@@ -286,7 +286,7 @@ test('it supports returning information about grouped updates', async () => {
         dependencyName: 'github.com/docker/docker',
         dependencyType: 'direct:production',
         updateType: 'version-update:semver-patch',
-        directory: '/',
+        directory: '/gh-base-image',
         packageEcosystem: 'docker',
         targetBranch: 'trunk',
         prevVersion: '',
@@ -302,7 +302,7 @@ test('it supports returning information about grouped updates', async () => {
         dependencyName: 'github.com/moby/moby',
         dependencyType: 'direct:production',
         updateType: 'version-update:semver-patch',
-        directory: '/',
+        directory: '/gh-base-image',
         packageEcosystem: 'docker',
         targetBranch: 'trunk',
         prevVersion: '',
@@ -415,7 +415,7 @@ test('if there are multiple dependencies, it summarizes them', async () => {
   const mockAlert = { alertState: '', ghsaId: '', cvss: 0 }
 
   jest.spyOn(core, 'getInput').mockReturnValue('mock-token')
-  jest.spyOn(util, 'getBranchNames').mockReturnValue({ headName: 'dependabot/npm_and_yarn/api/main/feature1', baseName: 'trunk' })
+  jest.spyOn(util, 'getBranchNames').mockReturnValue({ headName: 'dependabot/npm_and_yarn/api/main/coffee-rails/and/coffeescript', baseName: 'trunk' })
   jest.spyOn(dependabotCommits, 'getMessage').mockImplementation(jest.fn(
     () => Promise.resolve(mockCommitMessage)
   ))
